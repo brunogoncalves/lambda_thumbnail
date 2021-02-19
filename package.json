@@ -1,0 +1,27 @@
+{
+    "name": "lambda-thumbnail",
+    "version": "0.1.0",
+    "description": "Lambda Thumbnail Generate",
+    "scripts": {
+        "local": "nodemon local.js"
+    },
+    "keywords": [
+        "aws lambda",
+        "thumnail",
+        "js"
+    ],
+    "contributors": [
+        "Bruno Gonçalves",
+        "Tiago Gonçalves"
+    ],
+    "license": "MIT",
+    "dependencies": {
+        "jimp": "^0.16.1"
+    },
+    "devDependencies": {
+        "sae-aws-lambda": "^0.1.5",
+        "sae-framework": "^0.15.9",
+        "axios": "^0.21.1",
+        "aws-sdk": "^2.842.0"
+    }
+}

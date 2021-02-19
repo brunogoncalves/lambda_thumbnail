@@ -1,0 +1,25 @@
+# 0.1.1
+version: 0.2
+
+env:
+  variables:
+     NODE_ENV: "build"
+
+phases:
+  install:
+    runtime-versions:
+        nodejs: 10
+
+  build:
+    commands:
+        # build app.zip
+        - npm i --only=prod
+        - mkdir builds
+        - zip -r builds/app.zip package.json lambda.js app node_modules
+        #- zip -r builds/app.zip package.json lambda.js app
+        - du -sh builds/app.zip
+
+        # Fazer deploy no Aws Lambda Layer e Function
+        - aws lambda update-function-code --function-name tnw_thumbnail --zip-file fileb://$CODEBUILD_SRC_DIR/builds/app.zip
+
+        - echo Finalizou OK
