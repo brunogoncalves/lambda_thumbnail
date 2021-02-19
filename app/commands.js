@@ -38,8 +38,8 @@ const __gerarThumbEnviar = async (s3, arquivo, bucket, nome, w = false, h = fals
 module.exports = (app) => {
 
     app.on('command.s3', async (cmd) => {
-        //console.log('S3 EVENTO');
-        //console.log(cmd);
+        console.log('S3 EVENTO');
+        console.log(JSON.stringify(cmd));
 
         // Baixar arquivo
         const s3 = new S3CLient({ region : 'sa-east-1', apiVersion : '2006-03-01' });
